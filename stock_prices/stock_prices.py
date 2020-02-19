@@ -2,9 +2,15 @@
 
 import argparse
 
-def find_max_profit(prices):
-  pass
+# find max value for selling
+# find the smallest values preceeding it for buying
 
+def find_max_profit(prices):
+  max_price = max(prices[1:])
+  max_price_index = prices.index(max_price)
+  min_prince = min(prices[:max_price_index])
+  
+  return max_price - min_prince
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
